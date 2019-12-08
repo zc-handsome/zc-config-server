@@ -1,0 +1,11 @@
+eureka.client.service-url.default-zone=http://localhost:8761/eureka,http://localhost:8760/eureka
+spring.application.name=eurekaConsumer
+eureka.instance.prefer-ip-address=true
+server.port=8762
+#安全检测
+eureka.client.healthcheck.enabled=true
+#关掉认证(公网下的生产环境不建议，内网部署可以）
+management.security.enabled=false
+#定义负载均衡的策略为随机策略（springboot默认的负载均衡策略为轮询的策略）
+eurekaproducer.ribbon.NFLoadBalancerRuleClassName=com.netflix.loadbalancer.RandomRule
+
